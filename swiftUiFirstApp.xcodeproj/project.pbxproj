@@ -9,16 +9,26 @@
 /* Begin PBXBuildFile section */
 		8E2D0A11285BD83300BFEE71 /* swiftUiFirstAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0A10285BD83300BFEE71 /* swiftUiFirstAppApp.swift */; };
 		8E2D0A13285BD83300BFEE71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0A12285BD83300BFEE71 /* ContentView.swift */; };
-		8E2D0A15285BD83700BFEE71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D0A14285BD83700BFEE71 /* Assets.xcassets */; };
 		8E2D0A18285BD83800BFEE71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D0A17285BD83800BFEE71 /* Preview Assets.xcassets */; };
+		8E2D0A1F285BE0AD00BFEE71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D0A1E285BE0AD00BFEE71 /* Assets.xcassets */; };
+		8E2D0A24285BE39000BFEE71 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0A23285BE39000BFEE71 /* Location.swift */; };
+		8E2D0A27285BE4B400BFEE71 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0A26285BE4B400BFEE71 /* LocationsDataService.swift */; };
+		8E2D0A29285BE9F300BFEE71 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0A28285BE9F300BFEE71 /* LocationsView.swift */; };
+		8E2D0A2B285BEA0C00BFEE71 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0A2A285BEA0C00BFEE71 /* LocationsViewModel.swift */; };
+		8E2D0A2D285C12C400BFEE71 /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D0A2C285C12C400BFEE71 /* LocationsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E2D0A0D285BD83300BFEE71 /* swiftUiFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUiFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2D0A10285BD83300BFEE71 /* swiftUiFirstAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUiFirstAppApp.swift; sourceTree = "<group>"; };
 		8E2D0A12285BD83300BFEE71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8E2D0A14285BD83700BFEE71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E2D0A17285BD83800BFEE71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8E2D0A1E285BE0AD00BFEE71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E2D0A23285BE39000BFEE71 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8E2D0A26285BE4B400BFEE71 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
+		8E2D0A28285BE9F300BFEE71 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		8E2D0A2A285BEA0C00BFEE71 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		8E2D0A2C285C12C400BFEE71 /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +63,11 @@
 			children = (
 				8E2D0A10285BD83300BFEE71 /* swiftUiFirstAppApp.swift */,
 				8E2D0A12285BD83300BFEE71 /* ContentView.swift */,
-				8E2D0A14285BD83700BFEE71 /* Assets.xcassets */,
+				8E2D0A1E285BE0AD00BFEE71 /* Assets.xcassets */,
+				8E2D0A25285BE48800BFEE71 /* DataServices */,
+				8E2D0A22285BE31D00BFEE71 /* Models */,
+				8E2D0A20285BE30900BFEE71 /* Views */,
+				8E2D0A21285BE31200BFEE71 /* ViewModels */,
 				8E2D0A16285BD83800BFEE71 /* Preview Content */,
 			);
 			path = swiftUiFirstApp;
@@ -65,6 +79,39 @@
 				8E2D0A17285BD83800BFEE71 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8E2D0A20285BE30900BFEE71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E2D0A28285BE9F300BFEE71 /* LocationsView.swift */,
+				8E2D0A2C285C12C400BFEE71 /* LocationsListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8E2D0A21285BE31200BFEE71 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8E2D0A2A285BEA0C00BFEE71 /* LocationsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8E2D0A22285BE31D00BFEE71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8E2D0A23285BE39000BFEE71 /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8E2D0A25285BE48800BFEE71 /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				8E2D0A26285BE4B400BFEE71 /* LocationsDataService.swift */,
+			);
+			path = DataServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +172,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E2D0A1F285BE0AD00BFEE71 /* Assets.xcassets in Resources */,
 				8E2D0A18285BD83800BFEE71 /* Preview Assets.xcassets in Resources */,
-				8E2D0A15285BD83700BFEE71 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E2D0A27285BE4B400BFEE71 /* LocationsDataService.swift in Sources */,
+				8E2D0A2D285C12C400BFEE71 /* LocationsListView.swift in Sources */,
+				8E2D0A2B285BEA0C00BFEE71 /* LocationsViewModel.swift in Sources */,
 				8E2D0A13285BD83300BFEE71 /* ContentView.swift in Sources */,
+				8E2D0A29285BE9F300BFEE71 /* LocationsView.swift in Sources */,
+				8E2D0A24285BE39000BFEE71 /* Location.swift in Sources */,
 				8E2D0A11285BD83300BFEE71 /* swiftUiFirstAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
