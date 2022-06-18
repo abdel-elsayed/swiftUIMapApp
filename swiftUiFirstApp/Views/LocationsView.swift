@@ -13,16 +13,20 @@ struct LocationsView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $vm.mapRegion)
+            mapLayer
                 .ignoresSafeArea()
             
             VStack(spacing: 0) {
-               header
+                header
                     .padding()
-
                 
                 Spacer()
+                locationPreviewStack
+                
             }
+        }
+        .sheet(item: $vm.presentedDetailSheet) { location in
+            LocationDetailView(location: location)
         }
     }
 }
@@ -53,13 +57,43 @@ extension LocationsView {
                     }
             }
             
-           if vm.shouldShowLocationList {
-            LocationsList()
-           }
+            if vm.shouldShowLocationList {
+                LocationsList()
+            }
         }
         .background(.thickMaterial)
         .cornerRadius(10)
         .shadow(color: .black.opacity(0.4),
                 radius: 10, x: 0, y: 15)
+    }
+    
+    private var mapLayer: some View {
+        Map(coordinateRegion: $vm.mapRegion,
+            annotationItems: vm.locations,
+            annotationContent: { location in
+            MapAnnotation(coordinate: location.coordinates) {
+                CustomMapPinView()
+                    .scaleEffect(vm.mapLocation == location ? 1 : 0.5)
+                    .onTapGesture {
+                        vm.changeCurrentLocation(location)
+                    }
+            }
+        })
+    }
+    
+    private var locationPreviewStack: some View {
+        ZStack {
+            ForEach(vm.locations) { location in
+                if vm.mapLocation == location {
+                    LocationPreviewView(location: location)
+                        .padding()
+                        .shadow(color: .black,
+                                radius: 20, y: 10)
+                        .transition(.asymmetric(insertion: .move(edge: .leading),
+                                                removal: .move(edge: .trailing)))
+                }
+            }
+            
+        }
     }
 }

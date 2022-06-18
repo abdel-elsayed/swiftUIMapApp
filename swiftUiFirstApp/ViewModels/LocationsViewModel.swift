@@ -22,6 +22,8 @@ class LocationsViewModel: ObservableObject {
     
     @Published var shouldShowLocationList = false
     
+    @Published var presentedDetailSheet: Location? = nil
+    
     
     init() {
         let locations = LocationsDataService.locations
@@ -42,5 +44,26 @@ class LocationsViewModel: ObservableObject {
         withAnimation(.easeInOut) {
             shouldShowLocationList.toggle()
         }
+    }
+    
+    func changeCurrentLocation(_ location: Location) {
+        withAnimation {
+            self.mapLocation = location
+            self.mapRegion = updateMapRegion(location)
+            shouldShowLocationList = false
+        }
+    }
+    
+    func nextButtonClicked() {
+        guard let currentIndex = locations.firstIndex(where: {$0 == mapLocation}) else {
+            return
+        }
+        
+        // if current location is the last one in the list
+        if currentIndex == locations.count-1 {
+            changeCurrentLocation(locations.first!)
+            return
+        }
+        changeCurrentLocation(locations[currentIndex+1])
     }
 }
