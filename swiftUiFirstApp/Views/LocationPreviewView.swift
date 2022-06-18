@@ -27,7 +27,8 @@ struct LocationPreviewView: View {
                     NextButton
                 }
             }
-        }.padding(20)
+        }
+        .padding(20)
         .background(
                 RoundedRectangle(cornerRadius: 10)
                     .fill(.ultraThinMaterial)
